@@ -1,0 +1,47 @@
+const { StudentModel } = require('../models/students');
+
+exports.addNewStudent = (first_name, last_name, age, city) => {
+    // Insert a new student
+    const student = StudentModel.create({
+        first_name,
+        last_name,
+        age,
+        city
+    });
+    console.log('Student Inserted successfully');
+    return student;
+}
+
+
+exports.getStudents = async () => {
+    // Query the students
+    const students = await StudentModel.findAll({
+        attributes: ['first_name', 'last_name', 'city'],
+        where: {
+            age: {
+                $gt: 25
+            }
+        },
+        order: [['first_name', 'ASC']]
+    });
+    //const students = await StudentModel.findAll();
+    console.log('All students:', JSON.stringify(students, null, 4));
+    return students;
+
+   
+}
+exports.getStudentsByCity = async (city) => {
+    // Query the students by city
+    const students = await StudentModel.findAll({
+        'where': {'city': city}
+    });
+    console.log(`Students from ${city}:`, JSON.stringify(students, null, 4));
+    return students;
+}
+
+exports.findStudentByEmail = async (email) => {
+    // Query the students by email
+    const student = await StudentModel.findOne({ where: { 'email':email } });
+    console.log('Student by email:', JSON.stringify(student, null, 4));
+    return student;
+}
