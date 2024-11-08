@@ -8,7 +8,7 @@ try {
 
     ProjectDao.getProjects();
     ProjectDao.getProjectByName('Project 2');
-    ProjectDao.deleteProject('Project 1');
+    //ProjectDao.deleteProject('Project 1');
 
 
     StudentDao.getStudents();

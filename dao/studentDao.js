@@ -12,7 +12,6 @@ exports.addNewStudent = (first_name, last_name, age, city) => {
     return student;
 }
 
-
 exports.getStudents = async () => {
     // Query the students
     const students = await StudentModel.findAll({
@@ -27,8 +26,6 @@ exports.getStudents = async () => {
     //const students = await StudentModel.findAll();
     console.log('All students:', JSON.stringify(students, null, 4));
     return students;
-
-   
 }
 exports.getStudentsByCity = async (city) => {
     // Query the students by city
