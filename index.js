@@ -11,8 +11,8 @@ try {
     //ProjectDao.deleteProject('Project 1');
 
 
-    StudentDao.getStudents();
-    StudentDao.getStudentsByCity('New York');
+    //StudentDao.getStudents();
+    //StudentDao.getStudentsByCity('New York');
         
 } catch (error) {
     console.error('Error: ', error);

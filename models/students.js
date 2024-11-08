@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 const { sq } = require('../db/database');
  //Define Student Model
- const StudentModel = sq.define('Student', {
+ const StudentModel = sq.define('tblStudent', {
     first_name: {
         type: DataTypes.STRING,
         allowNull: false

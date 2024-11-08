@@ -1,8 +1,8 @@
 const { ProjectModel } = require('../models/project');
 
-exports.addNewProject = (title, description) => {
+exports.addNewProject = async(title, description) => {
     //Insert a new project
-    const project = ProjectModel.create({
+    const project = await ProjectModel.create({
         title,
         description
     });

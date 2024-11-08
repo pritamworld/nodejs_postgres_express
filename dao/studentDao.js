@@ -1,8 +1,8 @@
 const { StudentModel } = require('../models/students');
 
-exports.addNewStudent = (first_name, last_name, age, city) => {
+exports.addNewStudent = async (first_name, last_name, age, city) => {
     // Insert a new student
-    const student = StudentModel.create({
+    const student = await StudentModel.create({
         first_name,
         last_name,
         age,
