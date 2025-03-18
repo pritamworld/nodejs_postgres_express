@@ -61,12 +61,11 @@ app.listen(3000, async()=>{
     //await database.testDbConnection()
 })
 
+/*
 try {
 
-
-
-    
-
+    //ProjectDao.getProjects();
+    //ProjectDao.getProjectByName('Project 2');
     //ProjectDao.deleteProject('Project 1');
 
 
@@ -76,3 +75,4 @@ try {
 } catch (error) {
     console.error('Error: ', error);
 }
+*/

@@ -1,8 +1,8 @@
 const { StudentModel } = require('../models/students');
 
-exports.addNewStudent = (first_name, last_name, age, city) => {
+exports.addNewStudent = async (first_name, last_name, age, city) => {
     // Insert a new student
-    const student = StudentModel.create({
+    const student = await StudentModel.create({
         first_name,
         last_name,
         age,
@@ -11,7 +11,6 @@ exports.addNewStudent = (first_name, last_name, age, city) => {
     console.log('Student Inserted successfully');
     return student;
 }
-
 
 exports.getStudents = async () => {
     // Query the students
@@ -27,8 +26,6 @@ exports.getStudents = async () => {
     //const students = await StudentModel.findAll();
     console.log('All students:', JSON.stringify(students, null, 4));
     return students;
-
-   
 }
 exports.getStudentsByCity = async (city) => {
     // Query the students by city
