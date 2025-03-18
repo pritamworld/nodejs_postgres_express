@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const dbConfig = require('./db_config');
 
 //'postgres://postgres:postgres@localhost:5432/week11'
-exports.sq = new Sequelize(dbConfig.PGDATABASE, dbConfig.PGUSER, dbConfig.PGPASSWORD, {
+const sq = new Sequelize(dbConfig.PGDATABASE, dbConfig.PGUSER, dbConfig.PGPASSWORD, {
     host: dbConfig.PGHOST,
     dialect: dbConfig.DIALECTS,
     port: dbConfig.PGPORT,
@@ -27,3 +27,5 @@ exports.testDbConnection = async () => {
       console.error("Unable to connect to the database:", error);
     }
 };
+
+exports.sq = sq
